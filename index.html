@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Checklist Harian - Aplikasi PWA untuk mengelola rutinitas harian Anda dengan mudah dan efisien." />
+  <meta name="theme-color" content="#0f0f1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Checklist Harian ✅</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-effects">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-top">
+        <h1 class="app-title">
+          <span class="title-icon">💎</span>
+          <span>HVM Daily Checklist</span>
+        </h1>
+        <div class="date-display" id="dateDisplay"></div>
+      </div>
+      
+      <div class="stats-container">
+
+        <div class="stat-item">
+          <span class="stat-label">Kegagalan</span>
+          <span class="stat-value" id="failureCount">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">HVM Status</span>
+          <span class="stat-value highlight" id="hvmStatus">Elite</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <ul class="task-list" id="taskList">
+        <!-- HVM Items will be rendered here -->
+      </ul>
+    </main>
+
+
+    <footer class="app-footer">
+      <p>Dibuat dengan ❤️ &bull; Reset otomatis pukul 00:00</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -23,39 +23,116 @@
     <div class="orb orb-3"></div>
   </div>
 
-  <div class="app-container">
-    <header class="app-header">
-      <div class="header-top">
-        <h1 class="app-title">
-          <span class="title-icon">💎</span>
-          <span>HVM Daily Checklist</span>
-        </h1>
-        <div class="date-display" id="dateDisplay"></div>
+  <div class="swipe-container">
+    <!-- Page 1: Main Checklist -->
+    <div class="swipe-page" id="page-1">
+      <div class="app-container">
+        <header class="app-header">
+          <div class="header-top">
+            <h1 class="app-title">
+              <span class="title-icon">💎</span>
+              <span>HVM Daily Checklist</span>
+            </h1>
+            <div class="date-display" id="dateDisplay"></div>
+          </div>
+          
+          <div class="stats-container">
+            <div class="stat-item">
+              <span class="stat-label">Kegagalan</span>
+              <span class="stat-value" id="failureCount">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">HVM Status</span>
+              <span class="stat-value highlight" id="hvmStatus">Elite</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="main-content">
+          <ul class="task-list" id="taskList">
+            <!-- HVM Items will be rendered here -->
+          </ul>
+        </main>
+
+        <footer class="app-footer">
+          <p>Dibuat dengan ❤️ &bull; Reset otomatis pukul 00:00</p>
+          <p style="margin-top: 8px; opacity: 0.7; font-size: 0.8rem;">Geser kiri untuk melihat 7 Habits ➡️</p>
+        </footer>
       </div>
-      
-      <div class="stats-container">
+    </div>
 
-        <div class="stat-item">
-          <span class="stat-label">Kegagalan</span>
-          <span class="stat-value" id="failureCount">0</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">HVM Status</span>
-          <span class="stat-value highlight" id="hvmStatus">Elite</span>
-        </div>
+    <!-- Page 2: 7 Habits -->
+    <div class="swipe-page" id="page-2">
+      <div class="app-container">
+        <header class="app-header">
+          <div class="header-top">
+            <h1 class="app-title" style="font-size: 1.25rem;">
+              <span class="title-icon">🔥</span>
+              <span>7 Habits Sebelum Usia 28</span>
+            </h1>
+          </div>
+          <p class="app-subtitle" style="margin-top: 8px; margin-bottom: 0;">Investasi mental dan fisik untuk masa depan yang lebih stabil.</p>
+        </header>
+
+        <main class="main-content">
+          <ul class="task-list habits-list">
+            <li class="habit-item">
+              <div class="habit-number">1</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Siksa Fisik Secara Rutin</h3>
+                <p class="habit-desc">Angkat beban itu bukan sekadar soal estetika atau pamer otot. Ini adalah latihan mental. Saat lu memaksa tubuh melakukan repetisi terakhir yang berat, lu sedang melatih otak untuk tetap tenang di bawah tekanan.</p>
+              </div>
+            </li>
+            <li class="habit-item">
+              <div class="habit-number">2</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Bangun "Otot" Kesadaran (Meditasi)</h3>
+                <p class="habit-desc">Dunia modern didesain untuk bikin lu impulsif dan gampang terdistraksi. Meditasi adalah gym untuk otak. Dengan meditasi, lu punya kendali penuh agar nggak gampang disetir emosi atau pikiran nggak jelas.</p>
+              </div>
+            </li>
+            <li class="habit-item">
+              <div class="habit-number">3</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Makan Makanan "Membosankan"</h3>
+                <p class="habit-desc">Di era junk food yang penuh dopamin instan, kemampuan untuk konsisten makan makanan bernutrisi adalah sebuah superpower. Makanlah untuk fungsi tubuh, bukan cuma buat manjain lidah.</p>
+              </div>
+            </li>
+            <li class="habit-item">
+              <div class="habit-number">4</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Jadikan "Enggak" Sebagai Jawaban Default</h3>
+                <p class="habit-desc">Kita hidup di dunia dengan pilihan tanpa batas. Kalau lu bilang "iya" ke semuanya, lu nggak bakal ke mana-mana. Prinsip: Tolak hal-hal medioker. Fokus: Pilih 1 atau 2 hal, lalu komitmen total di sana.</p>
+              </div>
+            </li>
+            <li class="habit-item">
+              <div class="habit-number">5</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Bangun Pagi (Bukan Cuma Soal Produktivitas)</h3>
+                <p class="habit-desc">Tetap bangun pagi meski lu nggak ada jadwal kuliah atau kerja. Ini adalah bentuk dominasi diri. Lu sedang membuktikan ke diri sendiri bahwa lu adalah bos atas tubuh lu, bukan budak rasa malas.</p>
+              </div>
+            </li>
+            <li class="habit-item">
+              <div class="habit-number">6</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Filter Lingkungan Tanpa Ampun</h3>
+                <p class="habit-desc">Mau sekuat apa pun mental lu, kalau lu main di kubangan lumpur, lu bakal kecipratan. Lingkungan itu menular. Jangan ragu buat menjauh dari orang-orang yang nggak punya arah hidup jelas.</p>
+              </div>
+            </li>
+            <li class="habit-item">
+              <div class="habit-number">7</div>
+              <div class="habit-content">
+                <h3 class="habit-title">Deep Dive, Bukan Scrolling</h3>
+                <p class="habit-desc">Berhenti menelan informasi hanya dari kulitnya (konten 15 detik). Biasakan baca buku atau dalami satu topik sampai ke akarnya. Dunia butuh orang yang ahli, bukan orang yang cuma tahu banyak hal tapi dangkal.</p>
+              </div>
+            </li>
+          </ul>
+        </main>
+
+        <footer class="app-footer">
+          <p style="font-size: 0.8rem;">⬅️ Geser kanan untuk kembali</p>
+        </footer>
       </div>
-    </header>
-
-    <main class="main-content">
-      <ul class="task-list" id="taskList">
-        <!-- HVM Items will be rendered here -->
-      </ul>
-    </main>
-
-
-    <footer class="app-footer">
-      <p>Dibuat dengan ❤️ &bull; Reset otomatis pukul 00:00</p>
-    </footer>
+    </div>
   </div>
 
   <script src="app.js"></script>

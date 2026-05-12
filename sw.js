@@ -1,4 +1,4 @@
-const CACHE_NAME = 'checklist-harian-v1';
+const CACHE_NAME = 'checklist-harian-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -31,25 +31,31 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch - cache first, then network
+// Fetch - Network First, fallback to Cache
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      return cached || fetch(event.request).then((response) => {
-        // Cache new requests dynamically
-        if (response.status === 200) {
+    fetch(event.request)
+      .then((response) => {
+        // Jika online dan berhasil ambil data, update cache
+        if (response && response.status === 200) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(event.request, clone);
           });
         }
         return response;
-      });
-    }).catch(() => {
-      // Fallback for navigation requests
-      if (event.request.mode === 'navigate') {
-        return caches.match('./index.html');
-      }
-    })
+      })
+      .catch(() => {
+        // Jika offline, fallback ke cache
+        return caches.match(event.request).then((cached) => {
+          if (cached) {
+            return cached;
+          }
+          // Jika tidak ada di cache dan request adalah navigasi HTML
+          if (event.request.mode === 'navigate') {
+            return caches.match('./index.html');
+          }
+        });
+      })
   );
 });

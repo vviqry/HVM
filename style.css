@@ -317,3 +317,93 @@ body {
   color: var(--text-secondary);
   line-height: 1.5;
 }
+
+/* ===== Accordion Component ===== */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.accordion-item {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.accordion-item:hover {
+  border-color: var(--border-active);
+}
+
+.accordion-item.is-open {
+  border-color: var(--border-active);
+  box-shadow: 0 0 0 1px var(--accent-glow), var(--shadow-md);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.accordion-trigger:hover {
+  background: var(--bg-card-hover);
+}
+
+.accordion-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--gradient-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion-title {
+  flex: 1;
+  font-size: 0.93rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+
+/* Height animation via max-height trick */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.is-open .accordion-body {
+  max-height: 500px; /* large enough for any content */
+}
+
+.accordion-desc {
+  padding: 0 18px 20px 62px; /* left-aligned under the title */
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}

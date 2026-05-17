@@ -187,7 +187,37 @@
     });
   }
 
+  // ========== Accordion (Page 6) ==========
+  function initAccordion() {
+    const list = document.getElementById('accordionList');
+    if (!list) return;
+
+    const triggers = list.querySelectorAll('.accordion-trigger');
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accordion-item');
+        const isCurrentlyOpen = item.classList.contains('is-open');
+
+        // Close all items (enforce single-open rule)
+        list.querySelectorAll('.accordion-item').forEach((el) => {
+          el.classList.remove('is-open');
+          el.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle the clicked item (open only if it was closed before)
+        if (!isCurrentlyOpen) {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
   // ========== Start ==========
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', () => {
+    init();
+    initAccordion();
+  });
 })();
 

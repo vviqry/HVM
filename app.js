@@ -6,6 +6,9 @@
  * - Auto-reset at midnight (00:00)
  * - localStorage persistence
  * - Progress tracking
+ * 
+ * Note: Data 10 poin "Trik Baca Orang Diam-Diam" tersimpan rapi di:
+ * -> baca-orang.js (const TRIK_BACA_ORANG_DATA)
  */
 
 (function () {

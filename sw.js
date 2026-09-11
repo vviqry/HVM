@@ -1,9 +1,11 @@
-const CACHE_NAME = 'checklist-harian-v2';
+const CACHE_NAME = 'checklist-harian-v3';
 const ASSETS = [
   './',
   './index.html',
+  './baca-orang.html',
   './style.css',
   './app.js',
+  './baca-orang.js',
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',

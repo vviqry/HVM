@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id" class="allow-scroll">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trik Baca Orang Diam-Diam - 10 cara membaca karakter dan sifat asli seseorang dari gestur sehari-hari." />
+  <meta name="theme-color" content="#0a0a14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Trik Baca Orang Diam-Diam 👁️</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="allow-scroll">
+  <div class="background-effects">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="standalone-page">
+    <div class="app-container reading-page-container">
+      
+      <!-- Top Navigation -->
+      <nav class="page-top-nav" aria-label="Navigasi Halaman">
+        <a href="index.html" class="nav-back-link">
+          <span class="nav-back-arrow">←</span>
+          <span>Kembali ke Checklist Utama</span>
+        </a>
+      </nav>
+
+      <!-- App Header -->
+      <header class="app-header reading-page-header">
+        <div class="header-top reading-header-top">
+          <div class="reading-title-group">
+            <h1 class="app-title">
+              <span class="title-icon">👁️</span>
+              <span>Trik Baca Orang</span>
+            </h1>
+            <span class="reading-badge-pill">10 Poin</span>
+          </div>
+
+          <div class="toolbar-actions">
+            <button type="button" id="btnExpandAll" class="btn-tool" aria-label="Buka semua dropdown">
+              Buka Semua
+            </button>
+            <button type="button" id="btnCollapseAll" class="btn-tool" aria-label="Tutup semua dropdown">
+              Tutup Semua
+            </button>
+          </div>
+        </div>
+        
+        <p class="app-subtitle">
+          Cara membaca karakter, niat, dan kedewasaan seseorang secara diam-diam lewat gestur &amp; kebiasaan sehari-hari.
+        </p>
+      </header>
+
+      <!-- Main Accordion List -->
+      <main class="main-content">
+        <div class="accordion-list reading-accordion-list" id="readingList">
+          <!-- Accordion items di-generate otomatis via baca-orang.js -->
+        </div>
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div class="footer-back-wrap">
+          <a href="index.html" class="footer-nav-btn">
+            <span>⬅️ Kembali ke Halaman Utama</span>
+          </a>
+        </div>
+        <p>HVM &bull; Trik Baca Orang Diam-Diam</p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="baca-orang.js"></script>
+</body>
+</html>
